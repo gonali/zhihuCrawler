@@ -1,4 +1,20 @@
+
+
+#include <sys/time.h>
+#include <time.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <errno.h>
+#include <cstring>
+#include <cstdio>
+#include <pthread.h>
+
+#include "config.h"
 #include "webserver.h"
+
 using std::string;
 
 WebServer::WebServer() {

@@ -1,3 +1,13 @@
+/*
+ ============================================================================
+ Name        : zhihuCrawler.cpp
+ Author      : gonali
+ Version     :
+ Copyright   : Your copyright notice
+ Description : zhihuCrawler in C++,
+ ============================================================================
+ */
+
 #include <iostream>
 #include <unistd.h>
 #include <sys/time.h>

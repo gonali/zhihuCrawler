@@ -1,32 +1,9 @@
 #ifndef _CRAWLER_H_
 #define _CRAWLER_H_
 
-#include <iostream>
-#include <fstream>
-#include <sstream>
 #include <set>
 #include <vector>
 #include <queue>
-#include <string>
-#include <iterator>
-#include <signal.h>
-#include <cstdlib>
-#include <time.h>
-#include <unistd.h>
-#include <sys/time.h>
-#include <sys/epoll.h>
-#include <sys/socket.h> /* socket, connect */
-#include <netinet/in.h> /* struct sockaddr_in, struct sockaddr */
-#include <netdb.h>      /* struct hostent, gethostbyname */
-#include <unistd.h>
-#include <fcntl.h>
-#include <assert.h>
-
-#include "Url.h"
-#include "Parse.h"
-#include "config.h"
-#include "DNSManager.h"
-#include "dbg.h"
 
 #define MAXEVENTS   1024
 #define MAXCONNS    500

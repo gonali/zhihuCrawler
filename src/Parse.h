@@ -1,13 +1,7 @@
 #ifndef _PARSE_H
 #define _PARSE_H
 
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <cstdlib>
 #include <vector>
-
-#include "dbg.h"
 
 using namespace std;
 

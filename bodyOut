@@ -1,0 +1,30 @@
+Bodyout: HTTP/1.1 429
+Server: ZWS
+Connection: keep-alive
+Date: Thu, 28 Apr 2016 12:36:48 GMT
+Content-Length: 0
+X-Req-ID: B4397EAC572203E1
+Vary: Accept-Encoding
+X-Daa-Tunnel: hop_count=1
+
+
+Bodyout: HTTP/1.1 429
+Server: ZWS
+Connection: keep-alive
+Date: Thu, 28 Apr 2016 12:36:49 GMT
+Content-Length: 0
+X-Req-ID: B3BC270C572203E3
+Vary: Accept-Encoding
+X-Daa-Tunnel: hop_count=1
+
+
+Bodyout: HTTP/1.1 429
+Server: ZWS
+Connection: keep-alive
+Date: Thu, 28 Apr 2016 12:36:50 GMT
+Content-Length: 0
+X-Req-ID: B4398998572203E3
+Vary: Accept-Encoding
+X-Daa-Tunnel: hop_count=1
+
+

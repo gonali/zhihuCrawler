@@ -1,19 +1,9 @@
 #ifndef _DNSMANAGER_H_
 #define _DNSMANAGER_H_
 
-#include <cstring>
-#include <iostream>
-#include <string>
 #include <set>
 #include <vector>
 #include <map>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
-#include <netdb.h>
-
-#include "Url.h"
-#include "dbg.h"
 
 using namespace std;
 

@@ -1,3 +1,14 @@
+
+#include <string>
+#include <iostream>
+#include <cstring>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
+#include <netdb.h>
+
+#include "Url.h"
+#include "dbg.h"
 #include "DNSManager.h"
 
 DNSManager::DNSManager() {
@@ -7,7 +18,7 @@ DNSManager::DNSManager() {
 DNSManager::~DNSManager() {
 
 }
-j
+
 bool DNSManager::isValidHostChar(char ch)
 {
     return (isalpha(ch) || isdigit(ch)
@@ -43,8 +54,9 @@ string DNSManager::getIP(const string &sUrl)
 {
     Url url(sUrl);
     const char *purl = url.getHost().c_str();
-    //log_info("purl = %s", purl);
     
+    log_info("purl = %s", purl);
+
     if (!isValidHost(purl)) {
         log_err("%s is not a valid host", purl);
         return "";

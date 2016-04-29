@@ -1,3 +1,29 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <iterator>
+#include <signal.h>
+#include <cstdlib>
+#include <time.h>
+#include <unistd.h>
+#include <sys/time.h>
+#include <sys/epoll.h>
+#include <sys/socket.h> /* socket, connect */
+#include <netinet/in.h> /* struct sockaddr_in, struct sockaddr */
+#include <netdb.h>      /* struct hostent, gethostbyname */
+#include <arpa/inet.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <assert.h>
+#include <pthread.h>
+
+#include "Url.h"
+#include "Parse.h"
+#include "config.h"
+#include "DNSManager.h"
+#include "dbg.h"
+
 #include "XCrawler.h"
 
 /**
@@ -33,7 +59,10 @@ void XCrawler::init() {
         exit(0);
     }
     while (getline(init_file, strLine)) {
+//    	cout<<"get url: "<< strLine <<endl;
         unvisitedUrl.push(strLine);
+//        cout<<"unvisitedUrl size: "<< unvisitedUrl.size() <<endl;
+
     }
     init_file.close();
 
@@ -99,6 +128,7 @@ void XCrawler::fetch()
                 }
 
                 iRet = make_connection(&iFd);
+                cout<<"iRet: "<< iRet <<"  iFd: "<<iFd<<endl;
                 if (iRet < 0) {
                     log_err("and_make_connection");
                     break;
@@ -146,6 +176,8 @@ void XCrawler::fetch()
             vector<string> vFollows;
 
             switch (pState->iState) {
+
+            	cout << "iState: " << pState->iState << endl;
                 case 0:
                     iRet = get_response(pState);
                     if (iRet < 0) {
@@ -468,9 +500,9 @@ int XCrawler::fetch_url(string &sUrl) {
     int i;
 
     while (1) {
-    
+//    cout<< "at XCrawler::fetch_url(...), unvisitedUrl size: "<< unvisitedUrl.size()<<endl;
         if(unvisitedUrl.empty()) {
-            //sleep(1);
+//            sleep(1);
             printf("thread %ld: no data to process\n", (long)(pthread_self()) % THREAD_NUM);
             return -1;
         }
@@ -499,8 +531,9 @@ int XCrawler::make_connection(int *pFd) {
     struct hostent *server;
     struct sockaddr_in servAddr;
 
-    //string ip = dnsMana.getIP(url.getHost());
-    string ip = "60.28.215.98";
+//    string ip = dnsMana.getIP("www.zhihu.com");
+//    string ip = "60.28.215.98";
+    string ip = "119.84.68.145";
     
     memset(&servAddr, 0, sizeof(servAddr));
     servAddr.sin_family = AF_INET;

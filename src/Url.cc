@@ -1,3 +1,11 @@
+
+#include <string>
+#include <cctype>
+#include <iomanip>
+#include <sstream>
+
+#include "dbg.h"
+
 #include "Url.h"
 using namespace std;
 

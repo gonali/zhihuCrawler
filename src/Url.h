@@ -1,11 +1,7 @@
 #ifndef _URL_H
 #define _URL_H
 
-#include <string>
-#include <cctype>
-#include <iomanip>
-#include <sstream>
-#include "dbg.h"
+
 
 #define HTTPPROT    "http://"
 

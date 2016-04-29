@@ -20,4 +20,4 @@ string UNREACHABLE_HOST_MD5_FILE("./startfile/unreachableHost.txt");
 string RAW_DATA_FILE("./datafile/rawData.raw");
 
 // put your cookie here
-string cookie;
+string cookie = "ODg5ZThhNjg3YmZiNDA2NjkxYjhlYjZkYjg2NmU4MDI";
